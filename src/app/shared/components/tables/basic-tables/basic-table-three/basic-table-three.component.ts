@@ -1,8 +1,8 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { ButtonComponent } from '../../../ui/button/button.component';
-import { TableDropdownComponent } from '../../../common/table-dropdown/table-dropdown.component';
-import { BadgeComponent } from '../../../ui/badge/badge.component';
+import { CommonModule } from "@angular/common";
+import { Component } from "@angular/core";
+import { ButtonComponent } from "../../../ui/button/button.component";
+import { TableDropdownComponent } from "../../../common/table-dropdown/table-dropdown.component";
+import { BadgeComponent } from "../../../ui/badge/badge.component";
 
 interface Transaction {
   image: string;
@@ -14,20 +14,18 @@ interface Transaction {
 }
 
 @Component({
-  selector: 'app-basic-table-three',
+  selector: "app-basic-table-three",
   imports: [
     CommonModule,
     ButtonComponent,
     TableDropdownComponent,
     BadgeComponent,
   ],
-  templateUrl: './basic-table-three.component.html',
-  styles: ``
+  templateUrl: "./basic-table-three.component.html",
+  styles: ``,
 })
 export class BasicTableThreeComponent {
-
   // Type definition for the transaction data
-
 
   transactionData: Transaction[] = [
     {
@@ -150,7 +148,7 @@ export class BasicTableThreeComponent {
       category: "Finance", // Category of the transaction
       status: "Failed",
     },
-  ]
+  ];
 
   currentPage = 1;
   itemsPerPage = 5;
@@ -172,17 +170,17 @@ export class BasicTableThreeComponent {
 
   handleViewMore(item: Transaction) {
     // logic here
-    console.log('View More:', item);
+    console.log("View More:", item);
   }
 
   handleDelete(item: Transaction) {
     // logic here
-    console.log('Delete:', item);
+    console.log("Delete:", item);
   }
 
-  getBadgeColor(status: string): 'success' | 'warning' | 'error' {
-    if (status === 'Success') return 'success';
-    if (status === 'Pending') return 'warning';
-    return 'error';
+  getBadgeColor(status: string): "success" | "warning" | "error" {
+    if (status === "Success") return "success";
+    if (status === "Pending") return "warning";
+    return "error";
   }
 }
